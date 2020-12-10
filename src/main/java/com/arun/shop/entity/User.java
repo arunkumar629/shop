@@ -1,12 +1,14 @@
 package com.arun.shop.entity;
 
 import javax.persistence.CascadeType;
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
+import com.arun.shop.entity.*;
 @Entity
 public class User {
 	@Id
@@ -18,22 +20,18 @@ public class User {
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private UserAccount userAccount;
-	
-	@OneToOne(mappedBy="User",cascade=CascadeType.ALL)
-	private Order order;
 
 	public User() {
 		super();
 	}
 
-	public User(long id, String userName, String password, int age, UserAccount userAccount, Order order) {
+	public User(long id, String userName, String password, int age, UserAccount userAccount) {
 		super();
 		this.id = id;
 		this.userName = userName;
 		this.password = password;
 		this.age = age;
 		this.userAccount = userAccount;
-		this.order = order;
 	}
 
 	public long getId() {
@@ -76,13 +74,7 @@ public class User {
 		this.userAccount = userAccount;
 	}
 
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order= order;
-	}
-
+	
+	
 	
 }

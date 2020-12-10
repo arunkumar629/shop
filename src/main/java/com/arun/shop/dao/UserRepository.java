@@ -1,9 +1,11 @@
 package com.arun.shop.dao;
-import com.arun.shop.entity.*;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.arun.shop.entity.User;
+
 @Repository
-public interface ProductRepository    extends CrudRepository<Product,Long>{
+public interface UserRepository  extends CrudRepository<User,Long>{
 
 }

@@ -16,7 +16,7 @@ public class UserAccount {
 	long accountNumber;
 	long balance;
 	
-	@OneToOne(mappedBy="userAccount",cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+	@OneToOne(mappedBy="userAccount",cascade={ CascadeType.PERSIST,
 			CascadeType.REFRESH})
 private User user;
 
